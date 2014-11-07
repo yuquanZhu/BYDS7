@@ -27,13 +27,29 @@
 var P7Layer = cc.Layer.extend({
     WindowsSize: null,
     _GameResult: null,
+    _DrawTimeView: null,
+    //计时
+    _TimeCount: null,
     init: function () {
         this._super();
         this.WindowsSize = cc.Director.getInstance().getWinSize();
+        //Draw元件
+        this._DrawTimeView = cc.DrawNode.create();
+        //背景
+        var background = cc.Sprite.create(s_GameBackground);
+        background.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height / 2);
+        if (this.WindowsSize.height / background.getContentSize().height > this.WindowsSize.width / background.getContentSize().width) {
+            background.setScale(this.WindowsSize.height / background.getContentSize().height);
+        } else {
+            background.setScale(this.WindowsSize.width / background.getContentSize().width);
+        }
+        this.addChild(background);
+
+
         //标题
         var Label = cc.LabelTTF.create("P7 游戏界面", "Times New Roman", 40);
         Label.setColor(cc.c3b(255, 0, 0));
-        Label.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height - Label.getContentSize().height);
+        Label.setPosition(this.WindowsSize.width / 2, Label.getContentSize().height);
         this.addChild(Label);
 
         //游戏完成   _GameResult用与决定游戏结果  1 = 一关未过就失败 ， 2 = 已过关未提交过 ，3 = 已过关已提交过
@@ -45,6 +61,13 @@ var P7Layer = cc.Layer.extend({
         this.addChild(mFinishGameMenu, 1);
         mFinishGameMenu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2));
 
+        this._DrawTimeView.drawRect(cc.p(0, 0), cc.p(this.WindowsSize.width, 30), cc.c4f(1, 0, 0, 1), 0, cc.c4f(1, 0, 0, 1));
+        this.addChild(this._DrawTimeView, 5);
+        this._DrawTimeView.setPosition(0, this.WindowsSize.height - 35);
+        this._TimeCount = 0;
+        this.TimeViewWidth = (this.WindowsSize.width - 0);
+        this.TimeViewWidthSpace = this.TimeViewWidth / 120;
+        this.schedule(this.TimeAnimation, 0.25, 120);
     }, FinishGameMethod: function () {
         if (this._GameResult) {
             if (this._GameResult == 1) {
@@ -61,6 +84,21 @@ var P7Layer = cc.Layer.extend({
             }
         } else {
             //当失败
+        }
+    }
+    //时间条动画
+    , TimeViewWidth: null, TimeViewWidthSpace: null,
+    TimeAnimation: function () {
+        this._DrawTimeView.clear();
+        this._DrawTimeView.drawRect(cc.p(0, 0), cc.p(this.WindowsSize.width - (this.TimeViewWidthSpace * this._TimeCount), 30), cc.c4f(1, 0, 0, 1), 0, cc.c4f(1, 0, 0, 1));
+        if (this._TimeCount == 120) {
+            this._DrawTimeView.clear()
+            //没时间
+            console.log("over");
+            alert("over");
+        } else {
+            //加时间
+            this._TimeCount++;
         }
     }
 });

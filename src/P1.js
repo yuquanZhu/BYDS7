@@ -66,8 +66,11 @@ var P1Layer = cc.Layer.extend({
         var mP5Scene = P5Scene.create();
         cc.Director.getInstance().replaceScene(mP5Scene);
     }, GoToP6Method: function () {
-        var mP6Scene = P6Scene.create();
-        cc.Director.getInstance().replaceScene(mP6Scene);
+//        var mP6Scene = P6Scene.create();
+//        cc.Director.getInstance().replaceScene(mP6Scene);
+        //Test
+        var mP7Scene = P7Scene.create();
+        cc.Director.getInstance().replaceScene(mP7Scene);
     }
 });
 
