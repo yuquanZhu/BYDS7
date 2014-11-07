@@ -23,6 +23,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  测试 !
+ 测试 2！
  ****************************************************************************/
 
 var P1Layer = cc.Layer.extend({
