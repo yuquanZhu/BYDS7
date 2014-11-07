@@ -36,12 +36,14 @@ var P18Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP10Label_Submit = cc.LabelTTF.create("确认注册", "Times New Roman", 40);
+        mGoToP10Label_Submit.setColor(cc.c3b(255, 0, 0));
         var mGoToP10MenuItem_Submit = cc.MenuItemLabel.create(mGoToP10Label_Submit, this.GoToP10Method, this);
         var mGoToP10Menu_Submit = cc.Menu.create(mGoToP10MenuItem_Submit);
         this.addChild(mGoToP10Menu_Submit, 1);
         mGoToP10Menu_Submit.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2));
 
         var mGoToP10Label_Later = cc.LabelTTF.create("稍后注册", "Times New Roman", 40);
+        mGoToP10Label_Later.setColor(cc.c3b(255, 0, 0));
         var mGoToP10MenuItem_Later = cc.MenuItemLabel.create(mGoToP10Label_Later, this.GoToP10Method, this);
         var mGoToP10Menu_Later = cc.Menu.create(mGoToP10MenuItem_Later);
         this.addChild(mGoToP10Menu_Later, 1);

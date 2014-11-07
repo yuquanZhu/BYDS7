@@ -36,6 +36,7 @@ var P15Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP16Label = cc.LabelTTF.create("分享成功调用", "Times New Roman", 40);
+        mGoToP16Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP16MenuItem = cc.MenuItemLabel.create(mGoToP16Label, this.GoToP16Method, this);
         var mGoToP16Menu = cc.Menu.create(mGoToP16MenuItem);
         this.addChild(mGoToP16Menu, 1);

@@ -36,18 +36,21 @@ var P10Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP18Label = cc.LabelTTF.create("注册", "Times New Roman", 40);
+        mGoToP18Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP18MenuItem = cc.MenuItemLabel.create(mGoToP18Label, this.GoToP18Method, this);
         var mGoToP18Menu = cc.Menu.create(mGoToP18MenuItem);
         this.addChild(mGoToP18Menu, 1);
         mGoToP18Menu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2));
 
         var mGoToP7Label = cc.LabelTTF.create("再次挑战", "Times New Roman", 40);
+        mGoToP7Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP7MenuItem = cc.MenuItemLabel.create(mGoToP7Label, this.GoToP7Method, this);
         var mGoToP7Menu = cc.Menu.create(mGoToP7MenuItem);
         this.addChild(mGoToP7Menu, 1);
         mGoToP7Menu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2 - 100));
 
         var mGoToP11Label = cc.LabelTTF.create("提交成绩", "Times New Roman", 40);
+        mGoToP11Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP11MenuItem = cc.MenuItemLabel.create(mGoToP11Label, this.GoToP11Method, this);
         var mGoToP11Menu = cc.Menu.create(mGoToP11MenuItem);
         this.addChild(mGoToP11Menu, 1);

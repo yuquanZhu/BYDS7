@@ -36,12 +36,14 @@ var P9Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP3Label = cc.LabelTTF.create("继续挑战", "Times New Roman", 40);
+        mGoToP3Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP3MenuItem = cc.MenuItemLabel.create(mGoToP3Label, this.GoToP3Method, this);
         var mGoToP3Menu = cc.Menu.create(mGoToP3MenuItem);
         this.addChild(mGoToP3Menu, 1);
         mGoToP3Menu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2));
 
         var mGoToP15Label = cc.LabelTTF.create("邀请好友", "Times New Roman", 40);
+        mGoToP15Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP15MenuItem = cc.MenuItemLabel.create(mGoToP15Label, this.GoToP15Method, this);
         var mGoToP15Menu = cc.Menu.create(mGoToP15MenuItem);
         this.addChild(mGoToP15Menu, 1);

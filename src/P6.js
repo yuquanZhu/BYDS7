@@ -36,6 +36,7 @@ var P6Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP7Label = cc.LabelTTF.create("START", "Times New Roman", 40);
+        mGoToP7Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP7MenuItem = cc.MenuItemLabel.create(mGoToP7Label, this.GoToP7Method, this);
         var mGoToP7Menu = cc.Menu.create(mGoToP7MenuItem);
         this.addChild(mGoToP7Menu, 1);
