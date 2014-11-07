@@ -38,7 +38,7 @@ var P3Layer = cc.Layer.extend({
         var Label = cc.LabelTTF.create("游戏排行榜", "Microsoft yahei", 40);
         Label.setColor(cc.c3b(15, 48, 170));
         Label.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height - Label.getContentSize().height);
-        this.addChild(Label);
+        this.addChild(Label,1);
 
         //返回
         var mBackLabel = cc.LabelTTF.create("返回", "Times New Roman", 40);
@@ -49,12 +49,24 @@ var P3Layer = cc.Layer.extend({
         mBackMenu.setPosition(cc.p(mBackLabel.getContentSize().width, this.WindowsSize.height - mBackLabel.getContentSize().height));
 
         //背景图片
-        var background;
+        var background = cc.Sprite.create(s_Background);
+        //background.setSize(cc.size(this.WindowsSize.width, this.WindowsSize.height));
+        background.setVertexRect(cc.rect(0,0,this.WindowsSize.width, this.WindowsSize.height));
+        background.setAnchorPoint(0,0);
+        background.setPosition(0,0);
+        this.addChild(background,0);
 
-        //列表
-        var tableView = cc.TableView.create(this, cc.size(300, 350));
+
+        //列表 - 表头
+        var tableTitle = cc.Sprite.create(s_TableTitle);
+        tableTitle.setPosition(this.WindowsSize.width/2,this.WindowsSize.height - Label.getContentSize().height - tableTitle.getContentSize().height);
+        this.addChild(tableTitle);
+
+
+        //列表 - 列
+        var tableView = cc.TableView.create(this, cc.size(360, 500));
         tableView.setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL);
-        tableView.setPosition(size.width/2-150, size.height - 450);
+        tableView.setPosition(this.WindowsSize.width/2 - 180, this.WindowsSize.height - 620);
         tableView.setDelegate(this);
         tableView.setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN);
         this.addChild(tableView);
@@ -70,18 +82,16 @@ var P3Layer = cc.Layer.extend({
     scrollViewDidZoom:function (view) {
     },
 
-    tableCellTouched:function (table, cell) {
-        cc.log("cell touched at index: " + cell.getIdx());
-    },
-
     tableCellSizeForIndex:function (table, idx) {
         return cc.size(300,50);     //间距
     },
 
     tableCellAtIndex:function (table, idx) {
-        var strValue = idx.toFixed(0);
+        //测试数据
+        var strValue = parseInt(idx.toFixed(0)) + 1;
         var phone = "15989155910";
         var score = "135";
+
         var cell = table.dequeueCell();
         var label;
         var label2;
@@ -95,20 +105,17 @@ var P3Layer = cc.Layer.extend({
 
             label = cc.LabelTTF.create(strValue, "Helvetica", 20.0);
             label.setColor(cc.c4(0,0,0));
-            label.setPosition(38,24);
-            //label.setAnchorPoint(0,0);
+            label.setPosition(41,24);
             label.setTag(123);
 
             label2 = cc.LabelTTF.create(phone, "Helvetica", 20.0);
             label2.setColor(cc.c4(0,0,0));
-            label2.setPosition(145,24);
-            //label2.setAnchorPoint(0,0);
+            label2.setPosition(180,24);
             label2.setTag(123);
 
             label3 = cc.LabelTTF.create(score, "Helvetica", 20.0);
             label3.setColor(cc.c4(0,0,0));
-            label3.setPosition(249,24);
-            //label3.setAnchorPoint(0,0);
+            label3.setPosition(319,24);
             label3.setTag(123);
 
             cell.addChild(label);

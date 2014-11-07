@@ -35,7 +35,6 @@ var P5Layer = cc.Layer.extend({
         Label.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height - Label.getContentSize().height);
         this.addChild(Label);
 
-
         //返回
         var mBackLabel = cc.LabelTTF.create("返回", "Times New Roman", 40);
         mBackLabel.setColor(cc.c3b(255, 0, 0));
