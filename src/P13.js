@@ -36,12 +36,14 @@ var P13Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP14Label = cc.LabelTTF.create("我要抽奖", "Times New Roman", 40);
+        mGoToP14Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP14MenuItem = cc.MenuItemLabel.create(mGoToP14Label, this.GoToP14Method, this);
         var mGoToP14Menu = cc.Menu.create(mGoToP14MenuItem);
         this.addChild(mGoToP14Menu, 1);
         mGoToP14Menu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2));
 
         var mGoToP15Label = cc.LabelTTF.create("我要炫耀", "Times New Roman", 40);
+        mGoToP15Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP15MenuItem = cc.MenuItemLabel.create(mGoToP15Label, this.GoToP15Method, this);
         var mGoToP15Menu = cc.Menu.create(mGoToP15MenuItem);
         this.addChild(mGoToP15Menu, 1);

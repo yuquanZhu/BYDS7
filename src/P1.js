@@ -38,6 +38,7 @@ var P1Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP7Label = cc.LabelTTF.create("排行榜", "Times New Roman", 40);
+        mGoToP7Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP7MenuItem = cc.MenuItemLabel.create(mGoToP7Label, this.GoToP7Method, this);
         var mGoToP7Menu = cc.Menu.create(mGoToP7MenuItem);
         this.addChild(mGoToP7Menu, 1);
@@ -45,12 +46,14 @@ var P1Layer = cc.Layer.extend({
 
 
         var mGoToP5Label = cc.LabelTTF.create("我的剩余次数", "Times New Roman", 40);
+        mGoToP5Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP5MenuItem = cc.MenuItemLabel.create(mGoToP5Label, this.GoToP5Method, this);
         var mGoToP5Menu = cc.Menu.create(mGoToP5MenuItem);
         this.addChild(mGoToP5Menu, 1);
         mGoToP5Menu.setPosition(cc.p(this.WindowsSize.width / 2, this.WindowsSize.height / 2 - 100));
 
         var mGoToP6Label = cc.LabelTTF.create("开始游戏", "Times New Roman", 40);
+        mGoToP6Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP6MenuItem = cc.MenuItemLabel.create(mGoToP6Label, this.GoToP6Method, this);
         var mGoToP6Menu = cc.Menu.create(mGoToP6MenuItem);
         this.addChild(mGoToP6Menu, 1);

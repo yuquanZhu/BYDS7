@@ -39,6 +39,7 @@ var P7Layer = cc.Layer.extend({
         //游戏完成   _GameResult用与决定游戏结果  1 = 一关未过就失败 ， 2 = 已过关未提交过 ，3 = 已过关已提交过
         this._GameResult = 2;
         var mFinishGameLabel = cc.LabelTTF.create("游戏线束", "Times New Roman", 40);
+        mFinishGameLabel.setColor(cc.c3b(255, 0, 0));
         var mFinishGameMenuItem = cc.MenuItemLabel.create(mFinishGameLabel, this.FinishGameMethod, this);
         var mFinishGameMenu = cc.Menu.create(mFinishGameMenuItem);
         this.addChild(mFinishGameMenu, 1);

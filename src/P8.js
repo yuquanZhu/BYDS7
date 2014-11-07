@@ -36,6 +36,7 @@ var P8Layer = cc.Layer.extend({
         this.addChild(Label);
 
         var mGoToP3Label = cc.LabelTTF.create("再次挑战", "Times New Roman", 40);
+        mGoToP3Label.setColor(cc.c3b(255, 0, 0));
         var mGoToP3MenuItem = cc.MenuItemLabel.create(mGoToP3Label, this.GoToP3Method, this);
         var mGoToP3Menu = cc.Menu.create(mGoToP3MenuItem);
         this.addChild(mGoToP3Menu, 1);

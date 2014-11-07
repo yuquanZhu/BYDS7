@@ -37,6 +37,7 @@ var P12Layer = cc.Layer.extend({
 
             //已经提交过电话号码 SubmitPhone=1  or  未提交过电话号码 SubmitPhone=2
             var mGoToP13Label = cc.LabelTTF.create("确认", "Times New Roman", 40);
+            mGoToP13Label.setColor(cc.c3b(255, 0, 0));
             var mGoToP13MenuItem = cc.MenuItemLabel.create(mGoToP13Label, this.GoToP13Method, this);
             var mGoToP13Menu = cc.Menu.create(mGoToP13MenuItem);
             this.addChild(mGoToP13Menu, 1);
