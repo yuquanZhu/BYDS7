@@ -597,7 +597,7 @@ cc.LayerRGBA = cc.Layer.extend(/** @lends cc.LayerRGBA# */{
         this._displayedOpacity = 255;
         this._realOpacity = 255;
         this._displayedColor = cc.white();
-        this._realColor = cc.white();
+        this._realColor = cc.black();
         this._cascadeOpacityEnabled = false;
         this._cascadeColorEnabled = false;
     },

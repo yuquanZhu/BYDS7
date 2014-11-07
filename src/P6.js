@@ -31,6 +31,7 @@ var P6Layer = cc.Layer.extend({
         this.WindowsSize = cc.Director.getInstance().getWinSize();
         //标题
         var Label = cc.LabelTTF.create("P6 玩法介绍", "Times New Roman", 40);
+        Label.setColor(cc.c3b(255, 0, 0));
         Label.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height - Label.getContentSize().height);
         this.addChild(Label);
 

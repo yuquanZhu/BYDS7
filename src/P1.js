@@ -34,6 +34,7 @@ var P1Layer = cc.Layer.extend({
         //标题
         var Label = cc.LabelTTF.create("P1 主页", "Times New Roman", 40);
         Label.setPosition(this.WindowsSize.width / 2, this.WindowsSize.height - Label.getContentSize().height);
+        Label.setColor(cc.c3b(255, 0, 0));
         this.addChild(Label);
 
         var mGoToP7Label = cc.LabelTTF.create("排行榜", "Times New Roman", 40);
